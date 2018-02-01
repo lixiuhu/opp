@@ -9,5 +9,7 @@ EXPOSE 3000
 
 WORKDIR /app
 
-# Start process.yml
-CMD ["pm2-docker", "start", "--env", "production", "/app/pm2.json"]
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+CMD ["production"]
