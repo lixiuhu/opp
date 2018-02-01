@@ -10,6 +10,7 @@ EXPOSE 3000
 WORKDIR /app
 
 COPY ./docker-entrypoint.sh /
+RUN chmod a+x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["production"]
